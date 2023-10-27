@@ -1,12 +1,15 @@
 [Home](index.md)
 [CV](pages/cv.md)
 
+
+<link rel="stylesheet" href="stylesheets/air.css">
+
 Julie Mordacq
 
 PhD Student, Computer Science and Information Sciences  GeomeriX, Inria Saclay - LIX
 
 
-# My research interests
+### My research interests
 - Multimodal learning 
 - Topological Data Analysis 
 - Computer Vision
