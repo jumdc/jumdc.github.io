@@ -38,11 +38,12 @@ li
 }
 
 .profile-pic {
-    width: 100px;
+    /* width: 50px; */
+    /* height: auto;  */
     border-radius: 2%;
-    object-fit: cover;
-    margin-right: 40px;
-    margin-top: 18px;	
+    /* object-fit: cover; */
+    /* margin-right: 80px;
+    margin-top: 18px;	 */
 }
 .publi-title{
     color: var(--sub-color);
