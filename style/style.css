@@ -1,0 +1,80 @@
+body {
+    --main-color:rgb(2, 48, 71);
+    --sub-color: rgb(33, 158, 188);
+    --link-color: rgb(142, 202, 230);
+    --link-hover: rgb(171, 204, 228);
+    --gray-color:rgb(208, 208, 208);
+    padding: 40px 80px;
+    /* font-family: 'Roboto Mono', monospace; */
+    font-weight: 100;
+    
+}
+nav
+{
+    font-size: 1rem;
+}
+.name {
+    color: var(--main-color);
+    margin: 10px 0px; 
+    font-size: 30px;
+}
+h1, h2{ 
+    color: var(--main-color);
+    margin: 10px 0px; 
+    font-size: 30px;
+}
+li
+{
+    margin-bottom: 0.3em;
+}
+.custom-link {
+    color: var(--link-color);
+    font-weight: 500;
+}
+.contact { /* email */
+    padding: 0px;
+    margin: 0px;
+    font-size: 15px;
+}
+
+.profile-pic {
+    width: 280px;
+    border-radius: 2%;
+    object-fit: cover;
+    margin-right: 40px;
+    margin-top: 18px;	
+}
+.publi-title{
+    color: var(--sub-color);
+    font-size: 20px;
+    font-weight:normal
+
+}
+.publi-proc{
+    font-style: italic;
+
+}
+.publi-pic {
+    width: 200px;
+    border-radius: 0px;
+    object-fit: cover;
+    margin-right: 30px;
+    margin-left: 10px;
+   
+}
+.publi-text{
+    font-size: 10px;
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.box {
+    display: inline-block;
+    padding: 8px;
+    border: 2px solid var(--link-color);
+    border-radius: 5%;
+  
+  }
