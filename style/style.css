@@ -5,7 +5,7 @@ body {
     --link-hover: rgb(171, 204, 228);
     --gray-color:rgb(208, 208, 208);
     padding: 40px 80px;
-    /* font-family: 'Roboto Mono', monospace; */
+    font-family: "Manrope", sans-serif;
     font-weight: 100;
     
 }
