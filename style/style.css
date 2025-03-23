@@ -5,39 +5,60 @@ body {
     padding: 40px 80px;
     font-family: "Manrope", sans-serif;
     font-weight: 100;
+    width: 70%;
+    margin: 60px auto;
     
 }
-nav
-{
-    font-size: 1rem;
+/* Nav bar*/
+/* Less specific */
+nav ul, footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
 }
+nav ul li, footer ul li {
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px; /* largeur inter section */
+}
+
+hr {
+    border: none; /* Remove default border */
+    border-top: 2px solid var(--vlight-blue); 
+}
+
+.content {
+    width: 100%; /* Adjust this value to match your desired content width */
+    margin: 0 auto; /* Center the content block horizontally */
+  }
+
+
+/* name and various other*/
 .name {
     color: var(--dark-blue);
     margin: 10px 0px; 
-    font-size: 30px;
+    font-size: 30px;    
 }
 h1, h2{ 
     color: var(--dark-blue);
     margin: 10px 0px; 
     font-size: 25px;
 }
-li
-{
-    margin-bottom: 0.3em;
+h3 {
+    color: var(--dark-blue);
 }
 .custom-link {
     color: var(--vlight-blue);
     font-weight: 500;
 }
-.contact { /* email */
+.contact {
     padding: 0px;
     margin: 0px;
     font-size: 15px;
 }
-
 .profile-pic {
     width: 120px;
-    /* height: auto;  */
     border-radius: 2%;
     object-fit: cover;
     margin-right: 40px;
