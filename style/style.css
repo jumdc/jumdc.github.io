@@ -102,7 +102,7 @@ h3 {
 }
 .box-link {
     text-decoration: none;
-    color: var(--main-color);
+    color: white;
     font-weight: 400;
 }
 
@@ -159,6 +159,7 @@ h3 {
     border: 1.5px solid var(--main-color);
     border-radius: 5%;
     margin-top: 0px;
+    background-color: var(--main-color);
   }
 
 .inblock-line {
