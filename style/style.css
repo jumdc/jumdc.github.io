@@ -1,0 +1,193 @@
+body {
+    --main-color: rgb(203, 192, 211);
+    --secondary-color: rgb(142, 154, 175);
+    /* --light-blue: rgb(33, 158, 188);
+    --vlight-blue: rgb(142, 202, 230);*/
+    --light-grey: rgb(225, 229, 242); 
+    --photo-width: 280px;
+    padding: 40px 80px;
+    font-family: "Manrope", sans-serif;
+    font-weight: 100;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgb(142, 154, 175);
+}
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: white;
+    border-bottom: 2px solid var(--light-grey);
+}
+.site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0px;
+}
+
+/* Align content with bio (start after sidebar) */
+.site-brand {
+    color: var(--main-color);
+    font-weight: 600;
+}
+.site-nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    /* font-family: "Georgia", serif; */
+    font-weight: 200;
+}
+.site-nav li {
+    display: inline;
+    margin-left: 16px;
+}
+.site-nav a {
+    text-decoration: none;
+}
+
+/* Nav bar*/
+/* Less specific */
+nav ul, footer ul {
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+nav ul li, footer ul li {
+    display: inline;
+    margin-left: 20px;
+    margin-right: 20px; /* largeur inter section */
+}
+
+.separator {
+    border: none; /* Remove default border */
+    border-top: 0.5px solid var(--main-color); 
+}
+
+.content {
+    width: 100%; /* Adjust this value to match your desired content width */
+    margin: 0 auto; /* Center the content block horizontally */
+  }
+
+
+/* name and various other*/
+.name {
+    color: var(--main-color);
+    margin: 10px 0px; 
+    font-size: 30px;    
+}
+h1, h2{ 
+    color: var(--main-color);
+    margin: 10px 0px; 
+    font-size: 35px;
+    font-weight: 200;
+    font-family: "Georgia", serif;
+}
+h3 {
+    color: var(--main-color);
+    font-weight: 200;
+    font-family: "Georgia", serif;
+}
+
+.custom-link {
+    color: var(--main-color);
+    /* font-size: 13px; */
+    /* font-weight: 500; */
+}
+.box-link {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+}
+
+.github-icon {
+    vertical-align: middle;
+    margin-right: 5px;
+    color: var(--main-color);
+}
+.profile-pic {
+    width: var(--photo-width);
+    border-radius: 2%;
+    object-fit: cover;
+    margin-right: 40px;
+    margin-top: 18px;	
+}
+.sidebar {
+    width: var(--photo-width);
+    margin-right: 40px;
+}
+.publi-title{
+    color: var(--main-color);
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+.publi-text {
+    font-size: 13px;
+    margin-top: 0px;
+    text-align: justify;
+
+}
+.publi-proc{
+    font-style: italic;
+    font-size: 13px;
+    margin-bottom: 0px;
+
+}
+.publi-pic {
+    width: 200px;
+    border-radius: 0px;
+    object-fit: cover;
+    margin-right: 30px;
+    margin-left: 10px;
+   
+}
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.box {
+    display: inline-block;
+    padding: 2px;
+    border: 1.5px solid var(--main-color);
+    border-radius: 5%;
+    margin-top: 0px;
+    background-color: var(--main-color);
+  }
+
+.inblock-line {
+    /* color: var(--main-color); */
+    font-weight: 200;
+    font-family: "Georgia", serif;
+    margin-bottom: 0px;
+    margin-top: 3px;
+}
+
+/* Abstract button styling */
+.abstract-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    color: white;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+}
+
+.abstract-btn:hover {
+    opacity: 0.8;
+}
+
+/* Abstract content styling */
+.abstract-content {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 5px;
+    border-left: 4px solid var(--main-color);
+}
