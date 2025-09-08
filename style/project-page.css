@@ -84,6 +84,15 @@ p {
     font-weight: 200;
 }
 
+.abstract {
+    width: 70%;
+    margin: 0 auto;
+    text-align: justify;
+}
+.abstract h2 {
+    text-align: center;
+}
+
 .separator {
     border: none; /* Remove default border */
     border-top: 0.5px solid var(--main-color); 

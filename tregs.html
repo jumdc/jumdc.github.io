@@ -1,0 +1,146 @@
+
+<html>
+<head>
+	<title>T-REGS</title>
+	<meta property="og:title" content="T-REGS" />
+	<meta property="og:description" content="T-REGS Project page." />
+	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+   </style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="style/project-page.css" />
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<script>
+	window.MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$', '$$'], ['\\[', '\\]']]
+	}
+	};
+	</script>
+</head>
+
+
+
+<body  style="--main-color: rgb(142, 202, 230);">	
+	<div class="title">
+		<header class="site-header">
+			<div class="site-header__inner">
+				<!-- <div class="site-brand">Julie Mordacq</div> -->
+				<nav class="site-nav">
+					<ul>
+						<li><a class="custom-link" href="#abstract">Abstract</a></li>
+						<li><a class="custom-link" href="#method">T-REG</a></li>
+						<li><a class="custom-link" href="#method">T-REG for SSL</a></li>
+						<li><a class="custom-link" href="#bibtex">Bibtex</a></li>
+						<li><a class="custom-link" href="#acknowledgements">Acknowledgements</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<h1>T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning</h1>
+		<br>
+
+		<ul class="publication-authors ul" align="center">
+			<li><a href="https://jumdc.github.io/">Julie Mordacq<sup>1,2</sup></a></li>
+			<li><a href="https://github.com/leomlck">David Loiseaux<sup>1,2</sup></a></li>
+			<li><a href="https://vicky.kalogeiton.info/">Vicky Kalogeiton<sup>2</sup></a></li>
+			<li><a href="https://geometrica.saclay.inria.fr/team/Steve.Oudot/">Steve Oudot<sup>1,2</sup></a></li>
+		</ul>
+		<ul class="publication-institutions ul" align="center">	
+			<li><sup>1</sup> Inria Saclay</span></li>
+			<li><sup>2</sup> Ecole Polytechnique</span></li>
+		</ul>
+	</div>
+	
+	<br>
+	
+	<!-- <h3>MIDL 2024</h3> -->
+	
+	<div align="center">
+		<ul class="publication-links ul">
+			<li><div class="box"><a class="box-link" href="https://arxiv.org/abs/2407.03836">
+				<img src="assets/arxiv-logomark-small-square.svg" width="20" height="20" style="margin-right: 0.5rem; vertical-align: middle;" alt="arXiv"> Paper</a></div></li>
+			<li><div class="box"><a class="box-link" href="https://github.com/jumdc/ADAPT">
+				<i class="fa-brands fa-github icon" style="margin-right: 0.5rem;"></i>Code</a></div></li>
+		</ul>
+		<br>
+	
+	</div>
+
+	
+	
+	<div id="abstract" class="abstract">
+			<h2 style="text-align: center;">Abstract</h2>
+			Self-supervised learning (SSL) has emerged as a powerful paradigm for learning representations without labeled data, often by enforcing invariance to input transformations such as rotations or blurring.
+			Recent studies have highlighted two pivotal properties for effective representations: <i>(i)</i> avoiding <i>dimensional collapse</i>-where the learned features occupy only a low-dimensional subspace, and <i>(ii)</i> enhancing <i>uniformity</i> of the induced distribution.
+			In this work, we introduce T-REGS, a simple regularization framework for SSL based on the length of the Minimum Spanning Tree over the learned representation.
+			We provide theoretical analysis demonstrating that T-REGS simultaneously mitigates dimensional collapse and promotes distribution uniformity on arbitrary compact Riemannian manifolds.
+			Several experiments on synthetic data and on classical SSL benchmarks validate the effectiveness of our approach at enhancing representation quality.
+			</p>
+	</div>
+	
+	<div id="method" class="content">
+		<h2>T-REG: Minimum Spanning Tree based Regularization</h2>
+		<hr class="separator">
+		<br>
+
+		<div>
+			<p>
+				Our regularization T-REG has two terms:  a length-maximization loss $\mathcal{L}_{\text{E}}$ that decreases with the length of the minimum spanning tree, and a soft sphere-constraint $\mathcal{L}_{\text{S}}$ that increases with the distance to a fixed sphere $\mathbb{S}$.
+		These two terms combined force the embeddings to lie on~$\mathbb{S}$ (or close to it), while spreading them out along $\mathbb{S}$.
+
+		Formally, given $Z = \{z_1, ..., z_n\}\subseteq\mathbb{R}^d$, the $\mathrm{MST}$ length maximization loss is defined as:
+		\begin{equation}
+			\mathcal{L}_{\text{E}}(Z) = - \frac{1}{n} \,\text{E}(\mathrm{MST}({Z})),
+		\label{eq:l_e}
+		\end{equation}
+		where $\text{E}(\mathrm{MST}({Z}))$ denotes the length of the $\mathrm{MST}$ of $Z$.
+		The soft sphere-constraint is given by:
+		\begin{equation}
+			\mathcal{L}_\text{S}(Z) = \frac{1}{n} \sum_i (\Vert z_i\Vert_2 - 1)^2.
+		\label{eq:l8constraint}
+		\end{equation}
+		It penalizes points that move away from the unit sphere. Maximizing the MST length alone would cause the points to diverge to infinity; the sphere constraint prevents this by keeping the embeddings within a fixed region around $\mathbb{S}$.
+		The overall T-REG loss combines these two terms:
+		\begin{equation}\label{eq:TREG}
+			\mathcal{L}_{\text{T-REG}}(Z) = \gamma\, \mathcal{L}_{\text{E}}(Z) + \lambda\,  \mathcal{L}_\text{S}(Z),
+		\end{equation}
+		where $\gamma$ and $\lambda$ are hyperparameters controlling the trade-off between spreading out the embeddings and maintaining them on the sphere.
+			</p>
+		
+		</div>
+		<h2>Empirical Analysis</h2>
+		<br>
+		<div style=" text-align: center;">
+			
+			<img src="assets/sphere_pointcloud_loss.gif" alt="T-REGS" style="max-width: 800px; text-align: center;">
+			<br>
+			<p style="text-align: justify; width: 70%; margin: 0 auto;">
+				<!-- <b>Point cloud optimization</b>
+				<br> -->
+				
+				We start by generating a set of 256 points in $\mathbb{R}^3$,  initially concentrated around a specific point on the unit sphere
+				We then apply T-REG to optimize the point cloud.
+				We observe that T-REG successfully spreads points uniformly on the sphere by combining MST length maximization and sphere constraint.
+			</p>
+		</div>
+	<hr class="separator">
+	</div>
+	
+	<div id="bibtex" class="content">
+		<h2>Bibtex</h2>
+		<hr class="separator">
+	</div>
+	
+	<div id="acknowledgements" class="content">
+		<h2>Acknowledgements</h2>
+		<hr class="separator">
+	</div>
+	
+</body>
+
+</html>
