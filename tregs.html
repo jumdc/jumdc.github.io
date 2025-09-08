@@ -25,22 +25,21 @@
 
 
 <body  style="--main-color: rgb(142, 202, 230);">	
+	<header class="site-header">
+		<div class="site-header__inner">
+			<!-- <div class="site-brand">Julie Mordacq</div> -->
+			<nav class="site-nav">
+				<ul>
+					<li><a class="custom-link" href="#abstract">Abstract</a></li>
+					<li><a class="custom-link" href="#method">T-REG</a></li>
+					<li><a class="custom-link" href="#tregs">T-REG for SSL</a></li>
+					<li><a class="custom-link" href="#bibtex">Bibtex</a></li>
+					<li><a class="custom-link" href="#acknowledgements">Acknowledgements</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
 	<div class="title">
-		<header class="site-header">
-			<div class="site-header__inner">
-				<!-- <div class="site-brand">Julie Mordacq</div> -->
-				<nav class="site-nav">
-					<ul>
-						<li><a class="custom-link" href="#abstract">Abstract</a></li>
-						<li><a class="custom-link" href="#method">T-REG</a></li>
-						<li><a class="custom-link" href="#method">T-REG for SSL</a></li>
-						<li><a class="custom-link" href="#bibtex">Bibtex</a></li>
-						<li><a class="custom-link" href="#acknowledgements">Acknowledgements</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-
 		<h1>T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning</h1>
 		<br>
 
@@ -74,7 +73,7 @@
 	
 	
 	<div id="abstract" class="abstract">
-			<h2 style="text-align: center;">Abstract</h2>
+			<h2>Abstract</h2>
 			Self-supervised learning (SSL) has emerged as a powerful paradigm for learning representations without labeled data, often by enforcing invariance to input transformations such as rotations or blurring.
 			Recent studies have highlighted two pivotal properties for effective representations: <i>(i)</i> avoiding <i>dimensional collapse</i>-where the learned features occupy only a low-dimensional subspace, and <i>(ii)</i> enhancing <i>uniformity</i> of the induced distribution.
 			In this work, we introduce T-REGS, a simple regularization framework for SSL based on the length of the Minimum Spanning Tree over the learned representation.
@@ -128,9 +127,13 @@
 				We observe that T-REG successfully spreads points uniformly on the sphere by combining MST length maximization and sphere constraint.
 			</p>
 		</div>
-	<hr class="separator">
 	</div>
 	
+	<div id="tregs" class="content">
+		<h2>T-REGS: T-REG for SSL</h2>
+		<hr class="separator">
+	</div>
+
 	<div id="bibtex" class="content">
 		<h2>Bibtex</h2>
 		<hr class="separator">
