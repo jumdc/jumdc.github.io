@@ -74,19 +74,19 @@
 	
 	<div id="abstract" class="abstract">
 			<h2>Overview</h2>
-			<p>Self-supervised learning (SSL) enables learning representations without labeled data by enforcing invariance to transformations. Effective SSL representations avoid <i>dimensional collapse</i> and enhance <i>uniformity</i>. We introduce T-REGS, a simple and efficient regularization framework based on the Minimum Spanning Tree (MST) length, which mitigates collapse and promotes uniformity. </p>
+			<p>Self-supervised learning (SSL) enables learning representations without labeled data by enforcing invariance to transformations. Effective SSL representations avoid <i>dimensional collapse</i> and enhance <i>uniformity</i>. We introduce T-REGS, a simple and efficient regularization framework based on the Minimum Spanning Tree ($\mathrm{MST}$) length, which mitigates collapse and promotes uniformity. </p>
 			<!-- introducing treg -->
-			<p>We first introduce, a new regularization: T-REG. The central idea is to maximize the length of the minimum spanning tree ($\mathrm{MST}$) of the samples in the embedding space. It has strong theoretical connections to the line of work on statistical dimension estimation via entropy maximization <a href="http://www-stat.wharton.upenn.edu/~steele/Publications/PDF/Steele88a%20.pdf">(Steele, 1988)</a>.
-
+			<p>We first introduce, a new regularization: T-REG. The central idea is to maximize the length of the $\mathrm{MST}$ of the samples in the embedding space. It has strong theoretical connections to the line of work on statistical dimension estimation via entropy maximization <a href="http://www-stat.wharton.upenn.edu/~steele/Publications/PDF/Steele88a%20.pdf">(Steele, 1988)</a>.
 			More explicitly, given a point cloud $Z$ in Euclidean space, a spanning tree (ST) of $Z$ is an undirected graph $G=(V,E)$ with vertex set  $V=Z$ and edge set $E\subset V\times V$ such that $G$ is connected without cycle. 
 			We define the length of $G$ as:
 			\begin{equation}
 				E(G) := \sum_{(z,z')\in E} \|z-z'\|_2
 				\label{eq:alpha_length}
 			\end{equation}
-			A minimum spanning tree of $Z$, denoted by $\mathrm{MST}(Z)$, is an ST of $Z$ that minimizes length $E$; it is unique under a genericity condition on $Z$.
+			A minimum spanning tree of $Z$, denoted by $\mathrm{MST}(Z)$, is an ST of $Z$ that minimizes length $E$.
+			<!-- t is unique under a genericity condition on $Z$.
 			Since the length of $\mathrm{MST}(Z)$ scales under rescaling of $Z$, maximizing it alone leads the points to diverge. 
-			To prevent trivial scaling, T-REG constrains embeddings to a compact manifold, encouraging full use of the representation dimension and a uniform distribution.
+			To prevent trivial scaling, T-REG constrains embeddings to a compact manifold, encouraging full use of the representation dimension and a uniform distribution. -->
 			</p>
 			<p>We show both theoretically and empirically that T-REG naturally prevents dimensional collapse while enforcing sample uniformity. Finally, we apply T-REG to SSL either as standalone regularization, combining directly with view-invariance, or as an auxiliary loss to existing methods, yielding the <b>T-REGS</b> framework— whose effectiveness is evaluated through experiments on standard JE-SSL benchmarks.</p>
 	</div>
