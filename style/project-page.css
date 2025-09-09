@@ -7,8 +7,7 @@ body {
     --photo-width: 280px;
     padding: 40px 80px;
     font-family: "Manrope", sans-serif;
-    font-weight: 100;
-    width: 70%;
+    width: 60%;
     margin-left: auto;
     margin-right: auto;
     color: rgb(142, 154, 175);
@@ -201,6 +200,20 @@ a {
     background-color: var(--main-color);
   }
 
+.box-math {
+    display: block;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 15px;
+    text-align: justify; /* Justify the text inside the box */
+    border: 1px solid var(--main-color);
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin: 10px auto; /* Center the box horizontally */
+    width: 80%; /* Adjust the width as needed */
+}
+
 .inblock-line {
     /* color: var(--main-color); */
     font-weight: 200;
@@ -317,19 +330,8 @@ a {
   .dot:hover {
     background-color: #3f3f3f;
   }
-  /* .text {
-    color: #f2f2f2;
-    font-size: 15px;
-    padding: 8px 12px;
-    position: absolute;
-    bottom: 0px;
-    width: 100%;
-    text-align: center;
-    background: #0000008c;
-    line-height: 30px;
-  }
-   */
-   .text.legend {
-    font-size: 15px;
-    color: #a9a9a9;
-   }
+
+.text.legend {
+font-size: 15px;
+color: #a9a9a9;
+}
