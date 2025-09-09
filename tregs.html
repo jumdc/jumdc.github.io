@@ -5,13 +5,13 @@
 	<meta property="og:title" content="T-REGS" />
 	<meta property="og:description" content="T-REGS Project page." />
 	<style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
    </style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="style/project-page.css" />
-	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-	<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	<!-- SLOWS DOWN THE PAGE POLYFILL -->
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
 	<script>
 	window.MathJax = {
 	tex: {
@@ -74,29 +74,11 @@
 	
 	<div id="abstract" class="abstract">
 			<h2>Overview</h2>
-
-			
-<!-- 			
-			Theoretical analysis and experiments demonstrate its effectiveness. T-REG maximizes MST length while constraining embeddings to a compact manifold, ensuring uniform distribution and full use of the representation space. -->
-
-<!-- 		  
-			Self-supervised learning (SSL) has emerged as a powerful paradigm for learning representations without labeled data, often by enforcing invariance to input transformations such as rotations or blurring.
-			Recent studies have highlighted two pivotal properties for effective representations: <i>(i)</i> avoiding <i>dimensional collapse</i>-where the learned features occupy only a low-dimensional subspace, and <i>(ii)</i> enhancing <i>uniformity</i> of the induced distribution.
-			In this work, we introduce T-REGS, a simple regularization framework for SSL based on the length of the Minimum Spanning Tree over the learned representation.
-			We provide theoretical analysis demonstrating that T-REGS simultaneously mitigates dimensional collapse and promotes distribution uniformity on arbitrary compact Riemannian manifolds.
-			Several experiments on synthetic data and on classical SSL benchmarks validate the effectiveness of our approach at enhancing representation quality.
-			
-		
-		 -->
-			<p>
-				Self-supervised learning (SSL) enables learning representations without labeled data by enforcing invariance to transformations. Effective SSL representations avoid <i>dimensional collapse</i> and enhance <i>uniformity</i>. We introduce T-REGS, a simple and efficient regularization framework based on the Minimum Spanning Tree (MST) length, which mitigates collapse and promotes uniformity. 
-			</p>
-			<p>
-				We first introduce, a new regularization: T-REG.
-				The central idea of our regularization is to maximize the length of the minimum spanning tree ($\mathrm{MST}$) of the samples in the embedding space. It has strong theoretical connections to the line of work on statistical dimension estimation via entropy maximization <a href="http://www-stat.wharton.upenn.edu/~steele/Publications/PDF/Steele88a%20.pdf">(Steele, 1988)</a>.
+			<p>Self-supervised learning (SSL) enables learning representations without labeled data by enforcing invariance to transformations. Effective SSL representations avoid <i>dimensional collapse</i> and enhance <i>uniformity</i>. We introduce T-REGS, a simple and efficient regularization framework based on the Minimum Spanning Tree (MST) length, which mitigates collapse and promotes uniformity. </p>
+			<!-- introducing treg -->
+			<p>We first introduce, a new regularization: T-REG. The central idea is to maximize the length of the minimum spanning tree ($\mathrm{MST}$) of the samples in the embedding space. It has strong theoretical connections to the line of work on statistical dimension estimation via entropy maximization <a href="http://www-stat.wharton.upenn.edu/~steele/Publications/PDF/Steele88a%20.pdf">(Steele, 1988)</a>.
 
 			More explicitly, given a point cloud $Z$ in Euclidean space, a spanning tree (ST) of $Z$ is an undirected graph $G=(V,E)$ with vertex set  $V=Z$ and edge set $E\subset V\times V$ such that $G$ is connected without cycle. 
-
 			We define the length of $G$ as:
 			\begin{equation}
 				E(G) := \sum_{(z,z')\in E} \|z-z'\|_2
@@ -106,11 +88,7 @@
 			Since the length of $\mathrm{MST}(Z)$ scales under rescaling of $Z$, maximizing it alone leads the points to diverge. 
 			To prevent trivial scaling, T-REG constrains embeddings to a compact manifold, encouraging full use of the representation dimension and a uniform distribution.
 			</p>
-			<p>
-				We show both theoretically and empirically that T-REG naturally prevents dimensional collapse while enforcing sample uniformity.
-				
-				Finally, we apply T-REG to SSL either as standalone regularization, combining directly with view-invariance, or as an auxiliary loss to existing methods, yielding the <b>T-REGS</b> framework— whose effectiveness is evaluated through experiments on standard JE-SSL benchmarks
-			</p>
+			<p>We show both theoretically and empirically that T-REG naturally prevents dimensional collapse while enforcing sample uniformity. Finally, we apply T-REG to SSL either as standalone regularization, combining directly with view-invariance, or as an auxiliary loss to existing methods, yielding the <b>T-REGS</b> framework— whose effectiveness is evaluated through experiments on standard JE-SSL benchmarks.</p>
 	</div>
 	
 	<div id="method" class="content">
@@ -152,7 +130,8 @@
 		<div >
 			<h3 style="text-align: left;">Behavior on small samples</h3>
 			
-			<p>We begin by considering the case where $n\le d+1$. It is particularly relevant since, in SSL, batch sizes are often smaller than or comparable to the ambient dimension. In order to account for the effect of the soft sphere constraint, we assume the points of $X$ lie inside some fixed closed Euclidean $d$-ball ${B}$ of radius $r$ centered at the origin.</p>
+			<p>
+				We begin by considering the case where $n\le d+1$. It is particularly relevant since, in SSL, batch sizes are often smaller than or comparable to the ambient dimension. In order to account for the effect of the soft sphere constraint, we assume the points of $X$ lie inside some fixed closed Euclidean $d$-ball ${B}$ of radius $r$ centered at the origin.</p>
 			
 			<p class="box-math"><b>Theorem 1: </b>Under the above conditions, the maximum of $\text{E}({X})$ over the point sets $X\subset{B}$ of fixed cardinality $n$ is attained when the points of $X$ lie  on the sphere ${S}=\partial{B}$, at the vertices of a regular $(n-1)$-simplex that has ${S}$ as its  smallest circumscribing sphere.</p>
 		
@@ -173,17 +152,17 @@
 		<h2>Empirical Analysis</h2>
 		<br>
 		<div style=" text-align: center;">
-			
-			<img src="assets/sphere_pointcloud_loss.gif" alt="T-REGS" style="max-width: 800px; text-align: center;">
-			<br>
-			<p style="text-align: justify; width: 70%; margin: 0 auto;">
-				<!-- <b>Point cloud optimization</b>
-				<br> -->
-				
-				We start by generating a set of 256 points in $\mathbb{R}^3$,  initially concentrated around a specific point on the unit sphere
-				We then apply T-REG to optimize the point cloud.
-				We observe that T-REG successfully spreads points uniformly on the sphere by combining MST length maximization and sphere constraint.
+			<p style="text-align: justify; width: 80%; margin: 0 auto;">
+				We generate a set of 256 points in $\mathbb{R}^3$,  initially concentrated around a specific point on the unit sphere, and apply T-REG to optimize the point cloud.
+				We observe that T-REG successfully spreads points uniformly on the sphere.
 			</p>
+			<img src="assets/treg-3d-animation.gif" alt="T-REGS" style="max-width: 800px; text-align: center;">
+			<br>
+			<p style="text-align: justify; width: 80%; margin: 0 auto;">
+				Without the sphere constraint, the points diverge to infinity, as shown below:
+			</p>
+			<br>
+			<img src="assets/le-3d-animation.gif" alt="T-REGS" style="max-width: 800px; text-align: center;">
 		</div>
 	</div>
 	

@@ -207,7 +207,7 @@ a {
     word-wrap: break-word;
     font-size: 15px;
     text-align: justify; /* Justify the text inside the box */
-    border: 1px solid var(--main-color);
+    border: 2px solid var(--main-color);
     padding: 5px 10px;
     border-radius: 4px;
     margin: 10px auto; /* Center the box horizontally */
