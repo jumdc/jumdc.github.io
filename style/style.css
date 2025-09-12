@@ -162,7 +162,7 @@ h3 {
 .inblock-line {
     /* color: var(--main-color); */
     font-weight: 200;
-    font-family: "Georgia", serif;
+    /* font-family: "Georgia", serif; */
     margin-bottom: 0px;
     margin-top: 3px;
 }
