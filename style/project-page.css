@@ -342,6 +342,22 @@ color: #a9a9a9;
 }
 
 /* Responsive: full-width on small screens */
+@media (max-width: 1024px) {
+    body {
+        padding: 24px 40px;
+    }
+
+    /* Slightly relax abstract width on tablets */
+    .abstract {
+        width: 85%;
+    }
+
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
 @media (max-width: 640px) {
     body {
         width: 100%;
@@ -353,8 +369,16 @@ color: #a9a9a9;
         width: 100%;
     }
 
+    /* Allow nav to wrap instead of overflowing */
+    .site-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px 12px;
+    }
+
     .site-nav li {
-        margin-left: 10px;
+        margin-left: 0px;
     }
 
     .container {
@@ -374,10 +398,19 @@ color: #a9a9a9;
         margin-right: 0px;
         margin-left: 0px;
     }
+
+    /* Tweak headings to avoid overflow */
+    h1 {
+        font-size: 26px;
+    }
+    h2 {
+        font-size: 28px;
+    }
 }
 
 /* Ensure images scale within their containers */
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
