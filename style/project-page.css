@@ -68,7 +68,7 @@ p {
 }
 .publication-institutions li {
     display: inline;
-    margin-left: 20px;
+    margin-left: 15px;
     margin-right: 20px;
 }
 .publication-links li {
@@ -81,7 +81,7 @@ p {
     display: inline;
     margin-left: 20px;
     margin-right: 20px;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 200;
 }
 
@@ -348,6 +348,11 @@ color: #a9a9a9;
         padding: 20px;
     }
 
+    /* Make abstract section full width on small screens */
+    .abstract {
+        width: 100%;
+    }
+
     .site-nav li {
         margin-left: 10px;
     }
@@ -357,10 +362,22 @@ color: #a9a9a9;
         align-items: flex-start;
     }
 
+    /* Ensure carousel spans full width on phones */
+    .carousel-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .publi-pic {
         width: 100%;
         max-width: 420px;
         margin-right: 0px;
         margin-left: 0px;
     }
+}
+
+/* Ensure images scale within their containers */
+img {
+    max-width: 100%;
+    height: auto;
 }
