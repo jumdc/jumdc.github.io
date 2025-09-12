@@ -205,6 +205,34 @@ code {
     background-color: var(--main-color);
   }
 
+/* Fixed-size box variants (opt-in) */
+.box--fixed {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 160px;   /* adjust as needed */
+    height: 48px;   /* adjust as needed */
+    padding: 0;     /* content centered; override default padding */
+    white-space: nowrap;
+}
+
+.box--square {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;   /* adjust as needed */
+    height: 150px;  /* square */
+    padding: 0;
+}
+
+/* Make links fill and center inside fixed boxes if used */
+.box--fixed .box-link,
+.box--square .box-link {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
 .box-math {
     display: block;
     overflow-x: auto;
@@ -413,4 +441,10 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Keep small icons inline inside link buttons */
+.box-link img {
+    display: inline;
+    vertical-align: middle;
 }
