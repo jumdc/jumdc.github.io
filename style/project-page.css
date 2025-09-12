@@ -153,6 +153,11 @@ code {
 .bibtex-container {
     position: relative;
 }
+.custom-link {
+    color: var(--main-color);
+    /* font-size: 13px; */
+    /* font-weight: 500; */
+}
 
 .copy-btn {
     position: absolute;
@@ -177,12 +182,10 @@ code {
 .copy-btn i {
     margin-right: 5px;
 }
-a {
+/* a {
     color: var(--main-color);
     text-decoration: none;
-    /* font-size: 13px; */
-    /* font-weight: 500; */
-}
+} */
 .box-link {
     text-decoration: none;
     color: white;
