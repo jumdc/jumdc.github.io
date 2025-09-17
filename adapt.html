@@ -6,10 +6,10 @@
 	<title>ADAPT</title>
 	<meta property="og:title" content="ADAPT" />
 	<meta property="og:description" content="ADAPT Project page." />
-	<style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
   
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="style/project-page.css" />
@@ -83,29 +83,30 @@
 				<!-- Full-width images with number and caption text -->
 				<div class="myCarousel fade">
 				  <!-- <div class="numbertext">1 / 5</div> -->
-				  <img width="380px" alt="approach" src="assets/gifs/b9w0_Counting2_overlay.gif">
+				  <div class="image-container">
+					<img width="380px" alt="approach" src="assets/gifs/b9w0_Counting2_overlay.gif" loading="eager" onload="hideLoader(this)">
+					<div class="loader">Loading...</div>
+				  </div>
 				  <div class="text legend">physiological response reconding: stress</div>
 				</div>
 				<div class="myCarousel fade">
 				  <!-- <div class="numbertext">2 / 5</div> -->
-				  <img width="380px" alt="approach" src="assets/gifs/b9w0_baseline_overlay.gif">
+				  <img width="380px" alt="approach" data-src="assets/gifs/b9w0_baseline_overlay.gif" loading="lazy">
 				  <div class="text legend">physiological response reconding: no stress</div>
 				</div>
 				<div class="myCarousel fade">
 					  <!-- <div class="numbertext">3 / 5</div> -->
-					  <img width="380px" alt="approach" src="assets/gifs/2ea4_Counting1_overlay.gif">
+					  <img width="380px" alt="approach" data-src="assets/gifs/2ea4_Counting1_overlay.gif" loading="lazy">
 					  <div class="text legend">physiological response reconding: no stress</div>
 				</div>
-				<div class="myCarousel fade">
-					  <!-- <div class="numbertext">4 / 5</div> -->
-					  <img width="380px" alt="approach" src="assets/gifs/f6q3_Video1_overlay.gif">
+				<!-- <div class="myCarousel fade">
+					  <img width="380px" alt="approach" data-src="assets/gifs/f6q3_Video1_overlay.gif" loading="lazy">
 					  <div class="text legend">physiological response reconding: no stress</div>
-				</div>
-				 <div class="myCarousel fade">
-					  <!-- <div class="numbertext">5 / 5</div> -->
+				</div> -->
+				 <!-- <div class="myCarousel fade">
 					  <img width="380px" alt="approach" src="assets/gifs/iqyg_Counting2_overlay.gif">
 					  <div class="text legend">physiological response reconding: stress</div>
-				</div>
+				</div> -->
 				  <!-- Next and previous buttons -->
 				<div class="previous" onclick="plusSlides(-1)">&#10094;</div>
 				<div class="next" onclick="plusSlides(1)">&#10095;</div>
@@ -207,8 +208,24 @@
 				dots[i].className = dots[i].className.replace(" active", "");
 			}
 			
-			slides[slideIndex-1].style.display = "block";
+			// Load image lazily when slide becomes active
+			let currentSlide = slides[slideIndex-1];
+			let img = currentSlide.querySelector('img');
+			if (img && img.dataset.src && !img.src) {
+				img.src = img.dataset.src;
+				img.removeAttribute('data-src');
+			}
+			
+			currentSlide.style.display = "block";
 			dots[slideIndex-1].className += " active";
+		}
+
+		// Hide loader function
+		function hideLoader(img) {
+			const loader = img.parentElement.querySelector('.loader');
+			if (loader) {
+				loader.style.display = 'none';
+			}
 		}
 
 		// Copy BibTeX function
