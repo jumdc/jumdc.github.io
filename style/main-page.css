@@ -1,5 +1,5 @@
 body {
-    --main-color: #8e9aaf;
+    --main-color: #6c757d;
     --secondary-color: #cbc0d3;
     /* --light-blue: rgb(33, 158, 188);
     --vlight-blue: rgb(142, 202, 230);*/
@@ -12,7 +12,7 @@ body {
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    color: rgb(142, 154, 175);
+    color: var(--main-color);
 }
 /* Header */
 .site-header {
@@ -101,7 +101,7 @@ h3 {
 }
 .box-link {
     text-decoration: none;
-    color: white;
+    color: var(--secondary-color);
     font-weight: 400;
 }
 
@@ -155,10 +155,10 @@ h3 {
 .box {
     display: inline-block;
     padding: 2px;
-    border: 1.5px solid var(--main-color);
+    border: 1.5px solid var(--secondary-color);
     border-radius: 5%;
     margin-top: 0px;
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
   }
 
 .inblock-line {
