@@ -1,6 +1,6 @@
 body {
-    --main-color: rgb(203, 192, 211);
-    --secondary-color: rgb(198, 210, 237);
+    --main-color: #8e9aaf;
+    --secondary-color: #cbc0d3;
     /* --light-blue: rgb(33, 158, 188);
     --vlight-blue: rgb(142, 202, 230);*/
     --light-grey: rgb(225, 229, 242); 
@@ -8,6 +8,7 @@ body {
     padding: 40px 80px;
     font-family: "Manrope", sans-serif;
     font-weight: 300;
+    font-size: 18px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -64,7 +65,7 @@ nav ul li, footer ul li {
 
 .separator {
     border: none; /* Remove default border */
-    border-top: 0.5px solid var(--main-color); 
+    border-top: 0.5px solid var(--light-grey); 
 }
 
 .content {

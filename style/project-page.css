@@ -1,6 +1,6 @@
 body {
-    --main-color: rgb(203, 192, 211);
-    --secondary-color: rgb(198, 210, 237);
+    --main-color: #8e9aaf;
+    --secondary-color: #cbc0d3;
     /* --light-blue: rgb(33, 158, 188);
     --vlight-blue: rgb(142, 202, 230);*/
     --light-grey: rgb(225, 229, 242); 
@@ -8,11 +8,11 @@ body {
     padding: 40px 80px;
     font-family: "Manrope", sans-serif;
     font-weight: 250;
-    font-size: 15px;
+    font-size: 18px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
-    color: rgb(142, 154, 175);
+    color: var(--main-color);
     
 }
 /* Header */
@@ -96,7 +96,7 @@ p {
 
 .separator {
     border: none; /* Remove default border */
-    border-top: 0.5px solid var(--main-color); 
+    border-top: 0.5px solid var(--light-grey); 
 }
 
 .content {
@@ -115,7 +115,7 @@ p {
 h1 { 
     color: var(--main-color);
     margin: 10px 0px; 
-    font-size: 30px;
+    font-size: 35px;
     font-weight: bold;
     font-family: "Georgia", serif;
     text-align: center;
@@ -366,7 +366,11 @@ code {
 
 .text.legend {
 font-size: 15px;
-color: #a9a9a9;
+text-align: left;
+width: 80%;
+display: block;
+margin: 0 auto;
+color: var(--secondary-color);
 }
 
 /* Responsive: full-width on small screens */
