@@ -68,7 +68,7 @@ p {
 }
 .publication-institutions li {
     display: inline;
-    font-size: 15px;
+    font-size: 18px;
     margin-left: 15px;
     margin-right: 20px;
 }
@@ -82,7 +82,7 @@ p {
     display: inline;
     margin-left: 15px;
     margin-right: 15px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 200;
 }
 
@@ -103,6 +103,7 @@ p {
 .content {
     width: 100%; /* Adjust this value to match your desired content width */
     margin: 0 auto; /* Center the content block horizontally */
+    padding-bottom: 10px;
   }
 
 
