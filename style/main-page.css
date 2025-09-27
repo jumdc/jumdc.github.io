@@ -8,7 +8,7 @@ body {
     padding: 40px 80px;
     font-family: "Manrope", sans-serif;
     font-weight: 300;
-    font-size: 18px;
+    font-size: 16px;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -20,7 +20,7 @@ body {
     top: 0;
     z-index: 1000;
     background: white;
-    border-bottom: 2px solid var(--light-grey);
+    border-bottom: 1px solid #d3d3d3;
 }
 .site-header__inner {
     display: flex;
@@ -65,7 +65,7 @@ nav ul li, footer ul li {
 
 .separator {
     border: none; /* Remove default border */
-    border-top: 0.5px solid var(--main-color); 
+    border-top: 0.5px solid #d3d3d3; 
 }
 
 .content {
@@ -100,9 +100,9 @@ h3 {
     /* font-weight: 500; */
 }
 .box-link {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: var(--secondary-color);
-    font-weight: 400;
+    /* font-weight: 400; */
 }
 
 .github-icon {
@@ -123,19 +123,19 @@ h3 {
 }
 .publi-title{
     color: var(--main-color);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     margin-bottom: 0px;
 }
 .publi-text {
-    font-size: 16px;
+    /* font-size: 16px; */
     margin-top: 0px;
     text-align: justify;
 
 }
 .publi-proc{
     font-style: italic;
-    font-size: 13px;
+    /* font-size: 13px; */
     margin-bottom: 0px;
 
 }
@@ -155,8 +155,8 @@ h3 {
 .box {
     display: inline-block;
     padding: 2px;
-    border: 1.5px solid var(--secondary-color);
-    border-radius: 5%;
+    /* border: 1.5px solid var(--secondary-color); */
+    /* border-radius: 5%; */
     margin-top: 0px;
     /* background-color: var(--main-color); */
   }
