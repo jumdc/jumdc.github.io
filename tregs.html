@@ -11,7 +11,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
    </style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-	<link rel="stylesheet" type="text/css" media="all" href="../../style/project-page.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="style/project-page.css" />
 	<!-- SLOWS DOWN THE PAGE POLYFILL -->
 	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
 	<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
@@ -54,7 +54,7 @@
 		</ul>
 		<ul class="publication-institutions ul" align="center">	
 			<li><sup>1</sup> Inria Saclay</span></li>
-			<li><sup>2</sup> Ecole Polytechnique</span></li>
+			<li><sup>2</sup> LIX, CNRS, École Polytechnique, IP Paris</span></li>
 		</ul>
 	</div>
 	
@@ -66,7 +66,7 @@
 	<div align="center">
 		<ul class="publication-links ul">
 			<li><div class="box"><a class="box-link" href="">
-				<img src="../../assets/arxiv-logomark-small-square.svg" width="20" height="20" style="margin-right: 0.5rem; vertical-align: middle;" alt="arXiv"> Paper</a></div></li>
+				<img src="assets/arxiv-logomark-small-square.svg" width="20" height="20" style="margin-right: 0.5rem; vertical-align: middle;" alt="arXiv"> Paper</a></div></li>
 			<li><div class="box"><a class="box-link" href="">
 				<i class="fa-brands fa-github icon" style="margin-right: 0.5rem;"></i>Code</a></div></li>
 		</ul>
@@ -96,7 +96,7 @@
 
 				
 			<figure style="text-align: center; margin: 0; width: 100%;">
-				<img style="display: block; margin: 0 auto; max-width: 30%;" src="../../assets/tregs/mst-plot.svg" alt="mst">
+				<img style="display: block; margin: 0 auto; max-width: 30%;" src="assets/tregs/mst-plot.svg" alt="mst">
 				<figcaption class="text legend" style="display: block; margin: 0 auto; max-width: 40%;">
 					<b>Example of a minimum spanning tree in $2$-d.</b>
 					$\mathrm{MST}(Z)$ connects the set of points $Z$ together, without any cycles and with the minimum possible total edge length.
@@ -106,7 +106,7 @@
 				As the $\mathrm{MST}(Z)$ connects all points together, increasing the distances between them naturally increases the total length of the $\mathrm{MST}$.		
 			</p>
 			<figure style="text-align: center; margin: 0; width: 100%;">
-				<img style="display: block; margin: 0 auto; max-width: 40%;" src="../../assets/tregs/scaled-mst-animation.gif" alt="mst-scaling">
+				<img style="display: block; margin: 0 auto; max-width: 40%;" src="assets/tregs/scaled-mst-animation.gif" alt="mst-scaling">
 				<figcaption class="text legend" style="display: block; margin: 0 auto; max-width: 40%;">
 					The length of the $\mathrm{MST}$ scales under any rescaling of $Z$.
 				</figcaption>
@@ -165,7 +165,7 @@
 			<!-- We start  with a point cloud $X$ of 256 points in $\mathbb{R}^3$, in the shape of a T-REX. -->
 		</p>
 		<figure style="text-align: center; margin: 0; width: 100%;">
-			<img style="display: block; margin: 0 auto; max-width: 70%;"src="../../assets/tregs/trex-tregs.gif" alt="T-REGS">
+			<img style="display: block; margin: 0 auto; max-width: 70%;"src="assets/tregs/trex-tregs.gif" alt="T-REGS">
 			<figcaption class="text legend" style="display: block; margin: 0 auto; max-width: 55%;">
 				<b>$3$-d point cloud analysis with T-REG.</b> T-REG successfully spreads points uniformly on the sphere by combining MST length maximization and sphere constraint.
 			</figcaption>
@@ -177,7 +177,7 @@
 		</p>
 		<br>
 		<figure style="text-align: center; margin: 0; width: 100%;">
-			<img style="display: block; margin: 0 auto; max-width: 70%;" src="../../assets/tregs/trex-l_e.gif" alt="T-REGS" >
+			<img style="display: block; margin: 0 auto; max-width: 70%;" src="assets/tregs/trex-l_e.gif" alt="T-REGS" >
 			<figcaption class="text legend" style="display: block; margin: 0 auto; max-width: 55%;">
 				<b>$3$-d point cloud analysis with $\mathcal{L}_{\text{E}}$.</b> Using only MST length maximization leads to excessive dilation.
 			</figcaption>
@@ -225,7 +225,7 @@
 		<hr class="separator">
 		<br>
 		<figure style="text-align: center; margin: 0; width: 100%;">
-			<img style="display: block; margin: 0 auto; max-width: 90%;" src="../../assets/tregs/TREGS.svg" alt="T-REGS">
+			<img style="display: block; margin: 0 auto; max-width: 90%;" src="assets/tregs/TREGS.svg" alt="T-REGS">
 			<br>
 			<figcaption class="text legend"><b>Overview of T-REGS.</b>
 				<i>(Left)</i> Two augmented views $X, X'$ are encoded by $f_\theta$ and projected by $h_\phi$ into embeddings $Z, Z'$. Training jointly: <i>(i)</i> enforces view invariance via $\mathcal{L}_\text{SSL}(Z,Z')$ (MSE when used as a standalone regularizer, or a standard SSL loss when used as an auxiliary term); <i>(ii)</i> maximizes the minimum-spanning-tree length on each branch, $\mathcal{L}_\mathrm{E}(Z)$ and $\mathcal{L}_\mathrm{E}(Z')$, repelling edge-connected points in $\mathrm{MST}(Z)$ and  $\mathrm{MST}(Z')$; and <i>(iii)</i> applies sphere constraints $\mathcal{L}_\mathrm{S}(Z)$ and $\mathcal{L}_\mathrm{S}(Z')$.
