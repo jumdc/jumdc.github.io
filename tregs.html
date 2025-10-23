@@ -67,7 +67,7 @@
 		<ul class="publication-links ul">
 			<li><div class="box"><a class="box-link" href="">
 				<img src="assets/arxiv-logomark-small-square.svg" width="20" height="20" style="margin-right: 0.5rem; vertical-align: middle;" alt="arXiv"> Paper</a></div></li>
-			<li><div class="box"><a class="box-link" href="">
+			<li><div class="box"><a class="box-link" href="https://github.com/jumdc/t-regs">
 				<i class="fa-brands fa-github icon" style="margin-right: 0.5rem;"></i>Code</a></div></li>
 		</ul>
 		<br>
@@ -236,7 +236,7 @@
 		<p>
 			<b>T-REGS</b> extend T-REG to self-supervised learning (SSL).
  
-			We follow standard joint-embedding architectures. For an input image $i$, with augmented views $x=t(i)$ and $x'=t'(i)$, we compute embeddings $z=h_\phi(f_\theta(x))$ and 
+			<!-- We follow standard joint-embedding architectures. For an input image $i$, with augmented views $x=t(i)$ and $x'=t'(i)$, we compute embeddings $z=h_\phi(f_\theta(x))$ and 
 			It acts as a regularization applied to the embedding batches $Z=[z_0, ..., z_n]$ and $Z'=[z'_0, ..., z'_n]$. 
 			<br>
 			It can be used as <i>(i)</i> a standalone regularization, combined directly with an invariance term, e.g., the Mean Squared Error (MSE): $\mathcal{L}_\text{MSE}(Z,Z') = \frac{1}{n} \sum_i \|z_i - z'_i\|_2^2$; or <i>(ii)</i> an auxiliary loss to existing self-supervised learning (SSL) methods. 
@@ -250,8 +250,37 @@
 				\mathcal{L}(Z,Z') = \beta \, \mathcal{L}_\text{SSL}(Z,Z') + \underbrace{\gamma \, \mathcal{L}_\text{E}(Z) + \lambda \, \mathcal{L}_\text{S}(Z)}_{\mathcal{L}_\text{T-REG}(Z)} + \underbrace{\gamma \, \mathcal{L}_\text{E}(Z') + \lambda \, \mathcal{L}_\text{S}(Z')}_{\mathcal{L}_\text{T-REG}(Z')}
 				\label{eq:loss} 
 			\end{equation}
-			where $\beta, \gamma, \lambda$ control the contribution of each term. 
+			where $\beta, \gamma, \lambda$ control the contribution of each term.  -->
+			For an input image $i$, two transformations $t,t'$ are sampled from a distribution $\mathcal{T}$ to produce two augmented views $x=t(i)$ and $x'=t'(i)$. 
+			These transformations are typically random crops and color distortions.
+			We compute embeddings $z=h_\phi(f_\theta(x))$ and $z'=h_\phi(f_\theta(x'))$ using a backbone $f_\theta$ and projector $h_\phi$. 
+			T-REGS acts as a regularization applied separately to the embedding batches $Z=[z_1, ..., z_n]$ and $Z'=[z'_1, ..., z'_n]$. 
+			Specifically, embeddings from each view batch, $Z$ and $Z'$, are treated as points in a high-dimensional space, 
+			and Kruskal's algorithm is used to construct two Minimum Spanning Tree (MST), one for each view batch.
+			These MSTs yield two T-REG regularization terms, which are combined into the T-REGS objective as follows:
+			\begin{equation}
+				\mathcal{L}_{\text{T-REGS}}(Z,Z') = 
+				\underbrace{\gamma \, \mathcal{L}_\text{E}(Z) + \lambda \, \mathcal{L}_\text{S}(Z)}_{\mathcal{L}_\text{T-REG}(Z)} + \underbrace{\gamma \, \mathcal{L}_\text{E}(Z') + \lambda \, \mathcal{L}_\text{S}(Z')}_{\mathcal{L}_\text{T-REG}(Z')}.
+				\label{eq:loss} 
+			\end{equation}
+			where $\gamma, \lambda$ control the contribution of each term. 
 		</p>
+		<p>
+			In practice, T-REGS can be used as:
+		</p>
+		
+		<ul>
+			<li>
+				<strong>A standalone regularization</strong>, combined directly with an invariance term such as the Mean Squared Error:
+				$$\mathcal{L}(Z,Z') = \beta \, \mathcal{L}_\text{MSE}(Z,Z') + \mathcal{L}_\text{T-REGS}(Z,Z')$$
+				where $\mathcal{L}_\text{MSE}(Z,Z') = \frac{1}{n} \sum_i \|z_i - z'_i\|_2^2$ and $\beta$ is a mixing parameter.
+			</li>
+			<li>
+				<strong>As an auxiliary loss to existing SSL methods</strong>:
+				$$\mathcal{L}(Z,Z') = \beta \, \mathcal{L}_{\text{SSL}}(Z,Z') + \mathcal{L}_\text{T-REGS}(Z,Z')$$
+				where $\mathcal{L}_{\text{SSL}}(Z,Z')$ denotes the objective function of a given SSL method, and $\beta$ is a mixing parameter.
+			</li>
+		</ul>
 	</div>
 
 	<div id="bibtex" class="content">
