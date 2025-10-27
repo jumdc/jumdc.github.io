@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Julie Mordacq</title>
     <meta name="google-site-verification" content="-ONIGr6tEhkuQw0b8XmZWYd4P9mOMuG3DLmZUaJEWP8" />
-    <link href="style/main-page.css" rel="stylesheet">
+    <!-- <link href="style/main-page.css" rel="stylesheet"> -->
+    <link href="style/simple.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
@@ -34,7 +35,6 @@
             <img class="profile-pic" src="assets/v2.JPG" alt="Profile Picture">
            
         </div> -->
-        
         <div>
             <div  class="content">
                 <p>     
@@ -43,8 +43,7 @@
                     href="https://team.inria.fr/geomerix/">Geomerix team</a>) and <a class="custom-link"
                     href="https://vicky.kalogeiton.info/">Vicky Kalogeiton</a> (<a
                     class="custom-link" href="https://www.lix.polytechnique.fr/vista/">Vista team</a>).  
-                    <br><br>
-                    <b>Research interests:</b> Topological Data Analysis, Self-Supervised Learning, Computer Vision, Multimodal Learning<br>
+                    My research interests lie at the intersection of topological data analysis, self-supervised learning, and computer vision.
                 </p>
                 <p class="contact">  
                     <!-- <br>  -->
@@ -52,10 +51,13 @@
                      Inria Saclay, École Polytechnique
                      <br>  -->
                      <!-- <br>  -->
-                     <b>Email:</b> julie.mordacq[at]inria[dot]fr 
+                     
                      <!-- <br> -->
                      <!-- <br> -->
-                      <p><svg class="github-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                      <p>
+                        <b>Email:</b> julie.mordacq[at]inria[dot]fr 
+                        <br>
+                        <svg class="github-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                     </svg>
                     <a class="custom-link" href="https://github.com/jumdc"> github.com/jumdc</a>
@@ -87,7 +89,7 @@
         <!-- T-REGS -->
         <div class="container"> 
             <div>
-                <img class="publi-pic" src="assets/tregs/trex-treg.gif" >
+                <img class="publi-pic" src="assets/TREGS-unif.svg" >
             </div>
             <div>
                 <p class="publi-title">T-REGS: Minimum Spanning Tree Regularization for Self-Supervised Learning</p>
@@ -98,10 +100,13 @@
                     Recent studies have highlighted two pivotal properties for effective representations: <i>(i)</i> avoiding <i>dimensional collapse</i>-where the learned features occupy only a low-dimensional subspace, and <i>(ii)</i> enhancing <i>uniformity</i> of the induced distribution.
                     In this work, we introduce T-REGS, a simple regularization framework for SSL based on the length of the Minimum Spanning Tree over the learned representation.
                 </p>
-                <p class="publi-text">Spotlight <br> <i>Proc. Conference on Neural Information Processing Systems (NeurIPS), 2025</i></p>
+                <p>
+                    <div class="publi-proc">Spotlight <br> Proc. Conference on Neural Information Processing Systems (NeurIPS), 2025</div>
+                    <div class="box"><a class="box-link" href="https://jumdc.github.io/tregs">[project page]</a></div>
+                </p>
             </div>
         </div> 
-        <hr class="separator">
+        <!-- <hr class="separator"> -->
 
         <!-- Adapt -->
         <div class="container"> 
@@ -115,8 +120,9 @@
                 <p class="publi-text">
                     Multimodality has recently gained attention in the medical domain, where imaging or video modalities may be integrated with biomedical signals or health records. Yet, two challenges remain: balancing the contributions of modalities, especially in cases with a limited amount of data available, and tackling missing modalities. To address both issues, in this paper, we introduce the <b>A</b>nchore<b>D</b> multimod<b>A</b>l <b>P</b>hysiological <b>T</b>ransformer (ADAPT), a multimodal, scalable framework with two key components: <i>(i)</i> aligning all modalities in the space of the strongest, richest modality (called <i>anchor</i>) to learn a joint embedding space, and <i>(ii)</i> a Masked Multimodal Transformer, leveraging both inter- and intra-modality correlations while handling missing modalities.
                 </p>
-                <div class="publi-proc">Proc. Medical Imaging with Deep Learning (MIDL), 2024</div>
+                
                 <p>
+                    <div class="publi-proc">Proc. Medical Imaging with Deep Learning (MIDL), 2024</div>
                     <!-- <div class="box"><button class="box-link abstract-btn" onclick="toggleAbstract('midl-abstract')">abstract</button></div> -->
                     <div class="box"><a class="box-link" href="https://arxiv.org/abs/2407.03836">[paper]</a></div>
                     <div class="box"> <a class="box-link" href="adapt.html">[project page]</a></div>
@@ -128,7 +134,7 @@
                 </div>
             </div>
         </div>
-        <hr class="separator">
+        <!-- <hr class="separator"> -->
         <div class="container"> 
             <div>
                 <img class="publi-pic" src="assets/stressid.gif" >
@@ -138,8 +144,9 @@
                 <p class="publi-text" > Julie Mordacq, Leo Milecki, Maria Vakalopoulou, Steve Oudot, Vicky Kalogeiton </p>
                 <p class="publi-text">Dealing with missing modalities is critical for many real-life applications. In this work, we propose a scalable framework for detecting stress induced by specific triggers in multimodal data with missing modalities. Our method has two key components: <i>(i)</i> aligning all modalities in the space of the strongest modality (the video) for learning a joint embedding space and <i>(ii)</i> a Masked Multimodal Transformer, leveraging inter- and intra-modality correlations while handling missing modalities. We validate our method through experiments on the StressID dataset, where we set the new state of the art while demonstrating its robustness across various modality scenarios and its high potential for real-life applications.
                </p>
-                <div class="publi-proc">CVPR-W, WiCV, 2024</div>
+                
                 <p>
+                    <div class="publi-proc">CVPR-W, WiCV, 2024</div>
                     <!-- <div class="box"><button class="box-link abstract-btn" onclick="toggleAbstract('wicv-abstract')">abstract</button></div> -->
                     <div class="box"><a class="box-link" href="assets/wicv-paper.pdf">[paper]</a></div>
                     <div class="box"> <a class="box-link" href="adapt.html">[project page]</a></div>
@@ -154,62 +161,39 @@
         <h2 id="teaching">Teaching</h2>
         <h3>Teaching Assistant at École Polytechnique</h3>
         <div>
-            <p class="publi-title">INF556: Introduction to Topological Data Analysis</p>
-            <p class="publi-text" > Course by Steve Oudot </p>
-            <p class="publi-text" >
-                Topological Data Analysis (TDA) is a recent branch of machine learning and data mining. It has gained increasing success in recent years. The idea is to use tools from algebraic topology to analyze complex datasets whose observations lie on or near non-trivial geometric structures that can mislead classical analysis techniques. Topological methods are indeed capable of extracting useful information about these underlying geometric structures from the data, and of leveraging this information to improve the performance of learning models.
+            <p class="publi-title">INF556: Introduction to Topological Data Analysis </p>
+            <p class="publi-text" > Course by Steve Oudot <br> Dates: Sept-Nov 2023, Sept-Nov 2024
+            <!-- <br> -->
+            <!-- <a class="box-link" href="https://www.enseignement.polytechnique.fr/informatique/INF556/">[web page]</a> -->
             </p>
-            <p class="publi-text" >Dates: Sept-Nov 2023, Sept-Nov 2024</p>
 
-            <p>
-                <div class="box"><a class="box-link" href="https://www.enseignement.polytechnique.fr/informatique/INF556/">[web page]</a></div>
-            </p>
         </div>
-        <hr class="separator">
+        <!-- <hr class="separator"> -->
         <div>
             <p class="publi-title">CSC_43M04_EP: Computer Vision: from Fundamentals to Applications</p>
-            <p class="publi-text" > Course by Vicky Kalogeiton </p>
-            <p class="publi-text" >
-                Deep Learning, and more specifically Convolutional Neural Networks (CNNs), are methods that have recently experienced a resurgence in popularity and have significantly contributed to advances in problems as diverse as: classification, segmentation and comparison of images, object and person detection and recognition (e.g., faces), video analysis, anomaly detection, super-resolution, and even style analysis in images, among many others.
-            </p>
-            <p class="publi-text" >Dates: Feb-June 2024, Feb-June 2025</p>
-            <p>
-                <div class="box"><a class="box-link" href="https://synapses.polytechnique.fr/catalogue/2024-2025/ue/2262/csc-43m04-ep-modal-d-informatique-deep-learning-in-computer-vision">[web page]</a></div>
+            <p class="publi-text" > Course by Vicky Kalogeiton <br>
+                Dates: Feb-June 2024, Feb-June 2025 
+                <!-- <br> -->
+                <!-- <a class="box-link" href="https://synapses.polytechnique.fr/catalogue/2024-2025/ue/2262/csc-43m04-ep-modal-d-informatique-deep-learning-in-computer-vision">[web page]</a> -->
             </p>
         </div>
-
-        <hr class="separator">
 
         <div>
             <p class="publi-title">CSC_52002_EP: Computer Vision: from Fundamentals to Applications</p>
-            <p class="publi-text" > Course by Vicky Kalogeiton </p>
-            <!-- <p class="publi-text" >
-                This course is a comprehensive introduction to computer vision, covering both fundamental concepts and advanced techniques. It is designed for students with a strong interest in computer vision and machine learning.
-            </p> -->
-            <p class="publi-text" >Dates: Jan-March 2025</p>
-            <p>
-                <div class="box"><a class="box-link" href="https://synapses.polytechnique.fr/catalogue/2024-2025/ue/19742/csc-52002-ep-computer-vision-from-fundamentals-to-applications">[web page]</a></div>
+            <p class="publi-text" > 
+                Course by Vicky Kalogeiton <br> Dates: Jan-March 2025
+                <!-- <br> -->
+                <!-- <a class="box-link" href="https://synapses.polytechnique.fr/catalogue/2024-2025/ue/19742/csc-52002-ep-computer-vision-from-fundamentals-to-applications">[web page]</a> -->
             </p>
 
         </div>
 
-        <hr class="separator">
 
         <div>
             <p class="publi-title">INF361_EP: Introduction to Computer Science</p>
-            <p class="publi-text" > Course by François Morain </p>
-            <p class="publi-text" >
-                This introductory course is intended for first-year students with little or no prior knowledge of computer science.
-
-                The first part covers the basics of programming common to most languages. Object-oriented programming, one of the main programming paradigms used today, is introduced. We will see how this approach facilitates program design; all of this will be developed and implemented in Java.
-
-                The second part addresses different ways of representing structured data such as trees, associative tables, as well as the basic algorithms related to them.
-
-                Finally, the last part will present certain conceptual tools that make it possible to model real-world problems and ensure the correctness of a program.
-            </p>
-            <p class="publi-text" >Dates: April-June 2023</p>
-            <p>
-                <div class="box"><a class="box-link" href="https://synapses.polytechnique.fr/catalogue/2024-2025/ue/138/INF361-introduction-a-l-informatique?from=D1">[web page]</a></div>
+            <p class="publi-text" > Course by François Morain 
+                <br> Dates: April-June 2023
+                <!-- <br> <a class="box-link" href="https://synapses.polytechnique.fr/catalogue/2024-2025/ue/138/INF361-introduction-a-l-informatique?from=D1">[web page]</a> -->
             </p>
         </div>
 
@@ -219,8 +203,7 @@
         <p class="inblock-line">
             2025: <a class="custom-link" href="https://cvpr2023.thecvf.com/"  rel="external nofollow noopener" target="_blank">CVPR</a>,
             <a class="custom-link" href="https://bmvc2025.bmva.org/"  rel="external nofollow noopener" target="_blank">BMVC</a>
-        </p>
-        <p class="inblock-line">
+            <br>
             2024:
             <a  class="custom-link" href="https://socg24.athenarc.gr" rel="external nofollow noopener" target="_blank">SoCG</a>, 
                 <a class="custom-link" href="https://eccv2024.ecva.net" rel="external nofollow noopener" target="_blank">ECCV</a>,
@@ -235,13 +218,16 @@
         <!-- <p class="publi-text" ></p> -->
 
         <h3>Talks</h3>
+
         <p class="inblock-line">
-            
-            <a class="custom-link" href="https://www.inria.fr/en/datashape">DataShape meeting</a>, 2024,  Multimodal Learning for Detecting Physiological Changes
+            <a class="custom-link" href="https://jga2025.sciencesconf.org/">Journées de géométrie algorithmique</a>, 2025
+            <br>
+            <a class="custom-link" href="https://www.inria.fr/en/datashape">DataShape meeting</a>, 2024,  Multimodal Learning for Detecting Physiological Changes 
+            <br>
+            <a class="custom-link" href="https://www.inria.fr/en/simbiotx">SymbiotiX seminar</a>, 2023, Analysis of Physiological Changes in Multivariate Time Series and Videos
            <!-- <br> -->
         </p>
-        <p class="inblock-line">
-            <a class="custom-link" href="https://www.inria.fr/en/simbiotx">SymbiotiX seminar</a>, 2023, Analysis of Physiological Changes in Multivariate Time Series and Videos</p>
+       
 
     </div>
 
