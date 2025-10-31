@@ -75,10 +75,22 @@ p {
     margin-left: 15px;
     margin-right: 20px;
 }
+.publication-institutions {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
 .publication-links li {
     display: inline;
     margin-left: 20px;
     margin-right: 20px;
+}
+.publication-links {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .publication-authors li {
@@ -87,6 +99,12 @@ p {
     margin-right: 15px;
     font-size: 18px;
     font-weight: 200;
+}
+.publication-authors {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .abstract {
