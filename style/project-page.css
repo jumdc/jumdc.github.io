@@ -71,7 +71,7 @@ p {
 }
 .publication-institutions li {
     display: inline;
-    font-size: 18px;
+    font-size: 15px;
     margin-left: 15px;
     margin-right: 20px;
 }
@@ -97,7 +97,7 @@ p {
     display: inline;
     margin-left: 15px;
     margin-right: 15px;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 200;
 }
 .publication-authors {
@@ -138,7 +138,7 @@ p {
 h1 { 
     color: var(--main-color);
     margin: 10px 0px; 
-    font-size: 30px;
+    font-size: 27px;
     font-weight: bold;
     font-family: "Georgia", serif;
     text-align: center;
