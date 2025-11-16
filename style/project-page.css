@@ -440,24 +440,8 @@ code {
         padding: 20px;
     }
 
-    .site-header {
-        width: 100%;
-    }
-
     /* Make abstract section full width on small screens */
     .abstract {
-        width: 100%;
-    }
-
-    .content {
-        width: 100%;
-    }
-
-    .box-math {
-        width: 100%;
-    }
-
-    h1 {
         width: 100%;
     }
 
