@@ -287,3 +287,14 @@ code {
         margin-left: 0px;
     }
 }
+/* Ensure images scale within their containers */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* Keep small icons inline inside link buttons */
+.box-link img {
+    display: inline;
+    vertical-align: middle;
+}
