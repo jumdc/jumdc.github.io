@@ -260,11 +260,11 @@
 			Specifically, embeddings from each view batch, $Z$ and $Z'$, are treated as points in a high-dimensional space, 
 			and Kruskal's algorithm is used to construct two Minimum Spanning Tree (MST), one for each view batch.
 			These MSTs yield two T-REG regularization terms, which are combined into the T-REGS objective as follows:
-			\begin{equation}
+			\begin{align}
 				\mathcal{L}_{\text{T-REGS}}(Z,Z') = 
 				\underbrace{\gamma \, \mathcal{L}_\text{E}(Z) + \lambda \, \mathcal{L}_\text{S}(Z)}_{\mathcal{L}_\text{T-REG}(Z)} + \underbrace{\gamma \, \mathcal{L}_\text{E}(Z') + \lambda \, \mathcal{L}_\text{S}(Z')}_{\mathcal{L}_\text{T-REG}(Z')}.
 				\label{eq:loss} 
-			\end{equation}
+			\end{align}
 			where $\gamma, \lambda$ control the contribution of each term. 
 		</p>
 		<p>

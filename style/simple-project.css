@@ -286,6 +286,22 @@ code {
         margin-right: 0px;
         margin-left: 0px;
     }
+
+    /* Fix equation overflow on mobile */
+    .mjx-container {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+
+    .MathJax {
+        font-size: 0.85em !important;
+    }
+
+    /* Make images larger on mobile */
+    img {
+        max-width: 95% !important;
+        width: 95% !important;
+    }
 }
 /* Ensure images scale within their containers */
 img {
