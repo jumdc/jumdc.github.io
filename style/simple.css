@@ -139,3 +139,28 @@ h3 {
         margin-left: 0px;
     }
 }
+.talks-list {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0 0;
+    font-weight: 200;
+}
+
+.talks-list li {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 0 1rem;
+    padding: 0;
+    align-items: baseline;
+}
+
+.talk-date {
+    /* color: var(--secondary-color); */
+    /* font-size: 0.85em; */
+    white-space: nowrap;
+    padding-top: 1px;
+}
+
+.talk-details {
+    line-height: 1.5;
+}
