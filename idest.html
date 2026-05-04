@@ -1,0 +1,103 @@
+
+<html>
+<head>
+	<meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>IdEst</title>
+	<meta property="og:title" content="IdEst" />
+	<meta property="og:description" content="IdEst Project page." />
+	<style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+   </style>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" type="text/css" media="all" href="style/simple-project.css" />
+	<!-- SLOWS DOWN THE PAGE POLYFILL -->
+	<!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> -->
+	<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> 
+	<script>
+	window.MathJax = {
+	tex: {
+		inlineMath: [['$', '$'], ['\\(', '\\)']],
+		displayMath: [['$$', '$$'], ['\\[', '\\]']]
+	}
+	};
+	</script>
+</head>
+
+
+
+<body style="--secondary-color: #8ECAE6;">	
+	<header class="site-header">
+		<div class="site-header__inner">
+			<nav class="site-nav">
+				<ul>
+					<li><a class="custom-link" style="color: var(--main-color);" href="#abstract">Overview</a></li>
+					<!-- <li><a class="custom-link" style="color: var(--main-color);" href="#method">T-REG</a></li>
+					<li><a class="custom-link" style="color: var(--main-color);" href="#tregs">T-REG for SSL</a></li>
+					<li><a class="custom-link" style="color: var(--main-color);" href="#bibtex">Bibtex</a></li>
+					<li><a class="custom-link" style="color: var(--main-color);" href="#acknowledgements">Acknowledgements</a></li> -->
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div class="title" style="text-align: center;">
+		
+		<h1>IdEst: Assessing Self-Supervised Learning Representations via Intrinsic Dimension</h1>
+		<br>
+
+		<ul class="publication-authors ul">
+			<li><a class="custom-link" href="https://jumdc.github.io/">Julie Mordacq</a><sup>1,2</sup></li>
+			<li><a class="custom-link" href="https://vicky.kalogeiton.info/">Vicky Kalogeiton</a><sup>2</sup></li>
+			<li><a class="custom-link" href="https://geometrica.saclay.inria.fr/team/Steve.Oudot/">Steve Oudot</a><sup>1,2</sup></li>
+		</ul>
+		<ul class="publication-institutions ul">	
+			<li><sup>1</sup> Inria Saclay</span></li>
+			<li><sup>2</sup> LIX, CNRS, École Polytechnique, IP Paris</span></li>
+		</ul>
+		<h4>ICML 2026</h4>
+		<ul class="publication-links ul">
+			<li><div class="box"><a class="box-link" href="">
+				<!-- <img src="assets/arxiv-logomark-small-square.svg" width="20" height="20" style="margin-right: 0.5rem;" alt="arXiv"> -->
+				Paper</a></div></li>
+			<li><div class="box"><a class="box-link" href="">
+				<!-- <i class="fa-brands fa-github icon" style="margin-right: 0.5rem;"></i> -->
+				Code</a></div></li>
+		</ul>
+		<br>
+	
+	</div>
+
+    <div id="abstract" class="abstract">
+
+        <p>
+            Self-supervised learning (SSL) has emerged as a powerful paradigm for 
+        learning meaningful representations from unlabeled data. 
+        However, the standard protocol for evaluating these representations, 
+        linear probing,
+        is computationally expensive, 
+        sensitive to hyperparameters, and provides limited insight
+        into the geometric structure of the representation space.
+        </p>
+        <p>
+            Motivated by connections between neural network generalization 
+        and intrinsic dimensionality (ID) we propose IdEst, 
+        a method for estimating the ID of SSL representations 
+        via the Minimum Spanning Tree dimension estimator ($\mathrm{dim}_\mathrm{MST}$).
+        Across diverse datasets, architectures, and SSL pretraining objectives, 
+        we show that IdEst strongly correlates with downstream linear probe
+        performances.
+        </p>
+        <p>
+            Furthermore, we demonstrate that IdEst enables efficient hyperparameter selection, 
+        significantly reducing the computational cost compared to supervised
+        alternatives.
+        Our results highlight intrinsic dimensionality 
+        as a principled geometric proxy for assessing and optimizing SSL representations, 
+        complementing standard supervised probing protocols.
+        </p>
+        
+	
+	<br>
+    </div>
+</body>
