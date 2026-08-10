@@ -5,6 +5,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Julie Mordacq</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
     <meta name="google-site-verification" content="-ONIGr6tEhkuQw0b8XmZWYd4P9mOMuG3DLmZUaJEWP8" />
     <!-- <link href="style/main-page.css" rel="stylesheet"> -->
     <link href="style/simple.css" rel="stylesheet">
@@ -25,7 +26,7 @@
 <body>
     <header class="site-header">
         <div class="site-header__inner">
-            <!-- <div class="site-brand">Julie Mordacq</div> -->
+            <div class="site-brand" id="easter-egg-trigger">Julie Mordacq</div>
             <nav class="site-nav">
                 <ul>
                     <li><a class="custom-link" style="color: var(--main-color);" href="#about">About</a></li>
@@ -36,7 +37,7 @@
             </nav>
         </div>
     </header>
-    <h1 class="name" id="easter-egg-trigger">Julie Mordacq</h1>
+    <!-- <h1 class="name" id="easter-egg-trigger">Julie Mordacq</h1> -->
 
     <div id="about" class="container">
         <!-- <div class="sidebar">
@@ -333,7 +334,7 @@
             eggClicks++;
             clearTimeout(eggTimer);
             if (eggClicks >= 2) {
-                window.location.href = 'mosaic.html';
+                window.location.href = 'mosaic';
                 eggClicks = 0;
             } else {
                 eggTimer = setTimeout(() => { eggClicks = 0; }, 800);

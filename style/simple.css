@@ -34,7 +34,7 @@ body {
 /* Align content with bio (start after sidebar) */
 .site-brand {
     color: var(--main-color);
-    font-weight: 600;
+    font-weight: 200;
 }
 .site-nav ul {
     list-style: none;
@@ -164,3 +164,4 @@ h3 {
 .talk-details {
     line-height: 1.5;
 }
+

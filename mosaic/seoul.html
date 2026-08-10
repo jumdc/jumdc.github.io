@@ -4,162 +4,196 @@
 	<meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title>Julie Mordacq</title>
+	<link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
 	<meta property="og:title" content="seoul" />
 	<meta property="og:description" content="seoul" />
-	<style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
-   </style>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="style/mosaic.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+        .site-header { z-index: 10000; transition: opacity 0.3s ease; }
+
+        /* carousel-style lightbox — overrides mosaic.css */
+        .lightbox {
+            background: white !important;
+            cursor: default !important;
+        }
+        .lightbox img {
+            max-width: 80vw !important;
+            max-height: 80vh !important;
+            box-shadow: none !important;
+            cursor: default !important;
+        }
+        .lightbox-close {
+            color: #999 !important;
+            right: 20px !important;
+            left: auto !important;
+        }
+        .lightbox-close:hover { color: #333 !important; }
+        .lightbox-nav {
+            color: #bbb !important;
+            font-size: 2.5rem !important;
+            opacity: 1 !important;
+        }
+        .lightbox-nav:hover { color: #333 !important; }
+        .lightbox-caption { color: #888 !important; }
+    </style>
 </head>
 
 <body>
     <header class="site-header">
         <div class="site-header__inner">
-            <!-- <div class="site-brand">Julie Mordacq</div> -->
+            <div class="site-brand">Julie Mordacq</div>
             <nav class="site-nav">
                 <ul>
-                    <li><a class="custom-link" style="color: var(--main-color);" href="https://jumdc.github.io/">Home</a></li>
-                    <li><a class="custom-link" style="color: var(--main-color);" href="mosaic.html">Mosaic</a></li>
-                </ul>
+                    <li><a class="custom-link" id="index-toggle">index</a></li>
             </nav>
         </div>
     </header>
+
+    <div class="nav-panel" id="nav-panel">
+        <button class="nav-panel-close" id="nav-panel-close">&times;</button>
+        <ul>
+            <li><a class="custom-link" href="index.html" id="index-toggle">home</a></li>
+            <li><a class="custom-link" href="seoul.html" id="index-toggle">seoul</a></li>
+        </ul>
+    </div>
+    <div class="nav-panel-backdrop" id="nav-panel-backdrop"></div>
     <!-- <h1 class="name">Pictures</h1> -->
 
 
     <div class="galerie">
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/1.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/1.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Myeong-dong</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/2.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/2.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Myeong-dong</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/a.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/a.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Namsan Tower</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/b.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/b.JPG" alt="giverny" loading="eager" decoding="async">
             <!-- <figcaption>Namsan Tower</figcaption> -->
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/c.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/c.JPG" alt="giverny" loading="eager" decoding="async">
             <!-- <figcaption>Namsan Tower</figcaption> -->
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/d.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/d.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/e.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/e.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/g.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/g.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/h.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/h.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/i.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/i.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/j.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/j.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/k.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/k.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/l.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/l.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Changdeokgung</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/m.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/m.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Anguk Station</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/n.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/n.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Jong-ro</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/o.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/o.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Jong-ro</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/p.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/p.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Jong-ro</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/q.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/q.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Dongdaemun Design Plaza</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/r.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/r.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Seoul City Wall Trail</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/s.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/s.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Changsin</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/t.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/t.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Changsin</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/u.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/u.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Changsin</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/v.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/v.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Changsin</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/w.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/w.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Changsin</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/x.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/x.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Cafe Onion Anguk</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/y.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/y.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Bukchon Hanok Village</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/z.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/z.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Bukchon Hanok Village</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/4.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/4.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Bukchon Hanok Village</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/5.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/5.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Bukchon Hanok Village</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/6.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/6.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Bukchon Hanok Village</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/7.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/7.JPG" alt="giverny" loading="eager" decoding="async">
             <!-- <figcaption>Bukchon Hanok Village</figcaption> -->
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/8.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/8.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Bukchon Hanok Village</figcaption>
         </figure>
         <figure class="galerie-item">
-            <img src="assets/pics/seoul/9.JPG" alt="giverny" loading="eager" decoding="async">
+            <img src="../assets/pics/seoul/9.JPG" alt="giverny" loading="eager" decoding="async">
             <figcaption>Gyeongbokgung Palace</figcaption>
         </figure>
     </div>
@@ -171,11 +205,20 @@
         <button class="lightbox-nav lightbox-next" id="lightbox-next">&#8250;</button>
         <p class="lightbox-caption" id="lightbox-caption"></p>
     </div>
-
+   
     <script>
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const header = document.querySelector('.site-header');
+
+        function positionCloseBtn() {
+            const headerBottom = header.getBoundingClientRect().bottom;
+            lightboxClose.style.top = (headerBottom + 12) + 'px';
+        }
+        positionCloseBtn();
+        window.addEventListener('resize', positionCloseBtn);
 
         const imgs = Array.from(document.querySelectorAll('.galerie-item img'));
         let currentIndex = 0;
@@ -223,11 +266,39 @@
         });
 
         document.addEventListener('keydown', e => {
-            if (!lightbox.classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') navigate(-1);
-            if (e.key === 'ArrowRight') navigate(1);
+            if (e.key === 'Escape') {
+                if (lightbox.classList.contains('active')) closeLightbox();
+                else closeNavPanel();
+            }
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') navigate(-1);
+                if (e.key === 'ArrowRight') navigate(1);
+            }
         });
+
+        const navPanel = document.getElementById('nav-panel');
+        const navBackdrop = document.getElementById('nav-panel-backdrop');
+
+        function openNavPanel() {
+            navPanel.classList.add('open');
+            navBackdrop.classList.add('open');
+            header.style.opacity = '0';
+            header.style.pointerEvents = 'none';
+        }
+        function closeNavPanel() {
+            navPanel.classList.remove('open');
+            navBackdrop.classList.remove('open');
+            header.style.opacity = '1';
+            header.style.pointerEvents = '';
+        }
+
+        document.getElementById('index-toggle').addEventListener('click', e => {
+            e.preventDefault();
+            navPanel.classList.contains('open') ? closeNavPanel() : openNavPanel();
+        });
+
+        document.getElementById('nav-panel-close').addEventListener('click', closeNavPanel);
+        navBackdrop.addEventListener('click', closeNavPanel);
     </script>
 
 </body>
